@@ -1,0 +1,114 @@
+$primary-color: #da7c25;
+$secondary-color: #B923e1;
+$background-color: #f5f5f5;
+$text-color: #333;
+
+.titlecontainer {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.title1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(267deg, #da7c25 0.36%, #B923e1); // Définition d'un arrière-plan avec un dégradé linéaire
+  background-clip: text; // Applique le dégradé uniquement au texte
+  color: transparent; // Texte transparent pour rendre le dégradé visible 
+}
+
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; // Centre les cartes de projet
+  gap: 1rem; // Espacement entre les cartes
+  padding: 1rem;
+}
+
+.card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 300px; // Ajustez la largeur selon vos besoins
+  overflow: hidden; // Pour couper les débordements
+  cursor: pointer;
+  transition: transform 0.2s ease; // Animation lors du hover
+
+  &:hover {
+    transform: scale(1.05); // Agrandit la carte au survol
+  }
+}
+
+.card-image {
+  height: 200px; // Hauteur fixe pour l'image
+  background-size: cover; // Couvre toute la carte
+  background-position: center; // Centre l'image
+  position: relative; // Nécessaire pour la superposition
+}
+
+.overlay {
+  position: absolute; // Positionne l'overlay par rapport à l'image
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); // Fond semi-transparent
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  opacity: 0; // Masqué par défaut
+  transition: opacity 0.2s ease; // Transition pour l'overlay
+}
+
+.card:hover .overlay {
+  opacity: 1; // Affiche l'overlay au survol
+}
+
+h3 {
+  margin: 0.5rem;
+  font-size: 1.5rem; // Taille du titre
+  color: $text-color; // Couleur du texte
+}
+
+// Styles de la modale
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7); // Fond sombre
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; // Au-dessus des autres éléments
+}
+
+.modal-content {
+  background: grey;
+  border-radius: 10px;
+  padding: 2rem;
+  width: 90%; // Largeur responsive
+  max-width: 500px; // Largeur maximale
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.modal-links {
+  margin-top: 1rem; // Espace au-dessus des liens
+  display: flex;
+  justify-content: space-between; // Espacement entre les liens
+}
+
+button {
+  background: $primary-color;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem; // Remplissage
+  cursor: pointer;
+  transition: background 0.2s ease; // Transition de couleur
+
+  &:hover {
+    background: darken($primary-color, 10%); // S'assombrit au survol
+  }
+}
