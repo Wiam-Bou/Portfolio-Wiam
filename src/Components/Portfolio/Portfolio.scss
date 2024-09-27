@@ -1,7 +1,10 @@
-$primary-color: #da7c25;
-$secondary-color: #B923e1;
-$background-color: #f5f5f5;
-$text-color: #333;
+// Variables de couleurs
+$primary-color: #6a11cb; // Violet plus professionnel
+$secondary-color: #2575fc; // Bleu
+$modal-background-color: #ffffff; // Fond clair pour la modale
+$text-color-dark: #333333; // Texte sombre pour contraste
+$link-color: $secondary-color; // Couleur des liens
+$link-hover-color: lighten($secondary-color, 10%); // Plus clair au survol
 
 .titlecontainer {
   text-align: center;
@@ -11,9 +14,7 @@ $text-color: #333;
 .title1 {
   font-size: 2.5rem;
   font-weight: 700;
-  background: linear-gradient(267deg, #da7c25 0.36%, #B923e1); // Définition d'un arrière-plan avec un dégradé linéaire
-  background-clip: text; // Applique le dégradé uniquement au texte
-  color: transparent; // Texte transparent pour rendre le dégradé visible 
+  color:wheat;
 }
 
 .projects {
@@ -25,10 +26,9 @@ $text-color: #333;
 }
 
 .card {
-  background: white;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  width: 300px; // Ajustez la largeur selon vos besoins
+  width: 300px; 
   overflow: hidden; // Pour couper les débordements
   cursor: pointer;
   transition: transform 0.2s ease; // Animation lors du hover
@@ -67,7 +67,7 @@ $text-color: #333;
 h3 {
   margin: 0.5rem;
   font-size: 1.5rem; // Taille du titre
-  color: $text-color; // Couleur du texte
+  color: wheat;
 }
 
 // Styles de la modale
@@ -77,38 +77,58 @@ h3 {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.7); // Fond sombre
+  background: rgba(0, 0, 0, 0.5); // Fond sombre semi-transparent
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000; // Au-dessus des autres éléments
+  z-index: 1000;
 }
 
 .modal-content {
-  background: grey;
+  background: $modal-background-color; // Fond clair
   border-radius: 10px;
   padding: 2rem;
   width: 90%; // Largeur responsive
   max-width: 500px; // Largeur maximale
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  position: relative;
+}
+
+.skill-title {
+  font-size: 2rem;
+  color: wheat;
+  margin-bottom: 1rem;
+}
+
+p {
+  color: black;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
 }
 
 .modal-links {
   margin-top: 1rem; // Espace au-dessus des liens
   display: flex;
   justify-content: space-between; // Espacement entre les liens
-}
+  align-items: center;
 
-button {
-  background: $primary-color;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  padding: 0.5rem 1rem; // Remplissage
-  cursor: pointer;
-  transition: background 0.2s ease; // Transition de couleur
+  a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; // Espace entre l'icône et le texte
+    font-size: 1.2rem;
+    color: $text-color-dark; // Couleur des liens
+    text-decoration: none; // Pas de soulignement
+    transition: color 0.3s ease; // Animation sur le survol
 
-  &:hover {
-    background: darken($primary-color, 10%); // S'assombrit au survol
+    &:hover {
+      color: $primary-color; // Change de couleur au survol
+    }
+
+    .icon {
+      font-size: 1.5rem; // Taille de l'icône
+    }
   }
 }

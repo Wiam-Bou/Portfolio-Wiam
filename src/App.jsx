@@ -1,6 +1,6 @@
 import React from 'react'
 import Navbar from './Components/Navbar/Navbar'
-import Intro from './Components/Intro/intro'
+import Home from './Components/Home/Home'
 import Skills from './Components/Skills/Skills'
 import Portfolio from './Components/Portfolio/Portfolio'
 import Contact from './Components/Contact/Contact'
@@ -10,7 +10,7 @@ function App() {
   return (
     <div>
       <Navbar/>
-      <Intro/>
+      <Home/>
       <Skills/>
       <Portfolio/>
       <Contact/>
