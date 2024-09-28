@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import './Portfolio.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub } from '@fortawesome/free-brands-svg-icons'; // Icône GitHub
-import { faGlobe } from '@fortawesome/free-solid-svg-icons'; // Icône site web
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faGlobe } from '@fortawesome/free-solid-svg-icons'; 
 
 const projects = [
   {
@@ -10,13 +10,14 @@ const projects = [
     description: "Création de la page d'accueil d'une agence de voyage en utilisant HTML et CSS, avec intégration d'une interface responsive à partir de maquettes Figma. Ce projet m'a permis de développer des compétences en design responsive, en veillant à ce que le site soit parfaitement adapté aux appareils mobiles, tablettes et desktops.",
     image: '/Booki.jpg',
     codeLink: 'https://github.com/Wiam-Bou/BOOKI.git',
-    siteLink: 'https://github.com/Wiam-Bou/BOOKI.git',
+    websiteLink: 'https://github.com/Wiam-Bou/BOOKI.git',
   },
   {
     title: 'Sophie Bluel',
     description: "Développement d'une page web dynamique pour une architecte d'intérieur en utilisant JavaScript et une API. Ce projet inclut la gestion des événements utilisateurs, la manipulation du DOM, et la création d'une page de connexion pour l'administrateur ainsi qu'une modale d'upload de médias. Il m'a permis de perfectionner mes compétences en JavaScript et en communication avec une API",
     image: '/sophie-bluel.png',
     codeLink: 'https://github.com/sarahiftsn/Portfolio-architecte-sophie-bluel',
+    websiteLink:"https://sophie-bluel-dusky.vercel.app/",
   },
   
   {
@@ -24,7 +25,7 @@ const projects = [
     description: "Optimisation du référencement (SEO) et de l'accessibilité d'un site en tant que développeuse freelance. J'ai utilisé des outils comme Lighthouse et Wave pour analyser la performance et l'accessibilité du site, puis proposé et implémenté des améliorations pour augmenter la vitesse de chargement, la structure du code, et le référencement. Un rapport détaillé a été créé pour illustrer l'impact des modifications sur les performances du site",
     image: '/Nina.jpg',
     codeLink: 'https://github.com/Wiam-Bou/Nina-Carducci-P4.git',
-    siteLink: 'https://nina-carducci-p4.vercel.app/'
+    websiteLink: 'https://nina-carducci-p4.vercel.app/'
   },
   
   {
@@ -32,14 +33,14 @@ const projects = [
     description: "Développement du front-end d'une application en utilisant React et React Router pour une expérience utilisateur fluide et réactive. J'ai travaillé sur la présentation des données avec des composants React, configuré la navigation entre les pages, et utilisé des données simulées à partir d'un fichier JSON. Le projet a été configuré avec vite, et Node.js a été utilisé pour exécuter du code JavaScript en dehors du navigateur",
     image: '/Kasa.png',
     codeLink: 'https://github.com/Wiam-Bou/Kasa-Project.git',
-    siteLink: 'https://https://github.com/Wiam-Bou/Kasa-Project.git.com'
+    websiteLink: 'https://https://github.com/Wiam-Bou/Kasa-Project.git.com'
   },
   {
     title: 'Mon vieux grimoire',
     description: "Développement du back-end d'un site de notation de livres en utilisant Express et MongoDB. J'ai implémenté des opérations CRUD pour la gestion des livres et des notations, intégré un système d'authentification sécurisé, et géré le téléchargement et l'optimisation des images. Le projet suit une architecture MVC et applique les bonnes pratiques du Green Code pour minimiser l'empreinte écologique.",
     image: '/grimoire.jpg',
     codeLink: 'https://github.com/Wiam-Bou/P6-vieuxGrimoire.git',
-    siteLink: 'https://github.com/Wiam-Bou/P6-vieuxGrimoire.git'
+    websiteLink: 'https://github.com/Wiam-Bou/P6-vieuxGrimoire.git'
   },
   
 ];
@@ -54,8 +55,8 @@ const ProjectModal = ({ project, onClose }) => (
           <FontAwesomeIcon icon={faGithub} className="icon" /> {/* Icône GitHub */}
           Code source
         </a>
-        {project.siteLink && (
-          <a href={project.siteLink} target="_blank" rel="noopener noreferrer">
+        {project.websiteLink && (
+          <a href={project.websiteLink} target="_blank" rel="noopener noreferrer">
             <FontAwesomeIcon icon={faGlobe} className="icon" /> {/* Icône site web */}
             Lien vers le site
           </a>
@@ -71,7 +72,7 @@ const Portfolio = () => {
 
   return (
     <>
-      <div className='titlecontainer'>
+      <div id="portfolio" className='titlecontainer'>
         <h2 className="title1">Mon Portfolio</h2>
       </div>
       <div className="projects">
@@ -90,5 +91,4 @@ const Portfolio = () => {
     </>
   );
 };
-
 export default Portfolio;

@@ -7,16 +7,61 @@ import { FaAddressBook } from 'react-icons/fa';
 function Navbar() {
   return (
     <div className='navbar'>
-      <img src={logo} alt="logo" />
-      <Link className='nav-menu'>Accueil</Link>
-      <Link className='nav-menu'>Compétences</Link>
-      <Link className='nav-menu'>A propos</Link>
-      <Link className='nav-menu'>Portfolio</Link>
+  {/* Logo entouré du composant Link */}
+  <Link
+    to="intro" 
+    smooth={true} 
+    duration={500} 
+    className='logo-link'
+  >
+    <img src={logo} alt="logo" />
+  </Link>
+      
+      
+      <Link
+        to="intro" 
+        smooth={true} 
+        duration={500} 
+        className='nav-menu'
+      >
+        Accueil
+      </Link>
+      <Link
+        to="skills" 
+        smooth={true} 
+        duration={500} 
+        className='nav-menu'
+      >
+        Compétences
+      </Link>
+      <Link
+        to="about" 
+        smooth={true} 
+        duration={500} 
+        className='nav-menu'
+      >
+        A propos
+      </Link>
+      <Link
+        to="portfolio"  
+        smooth={true} 
+        duration={500} 
+        className='nav-menu'
+      >
+        Portfolio
+      </Link>
 
-      <button className="nav-connect">
-        <FaAddressBook className='contact-icon' />
-        Me contacter
-      </button>
+      <Link 
+  to="footer"  
+  smooth={true} 
+  duration={500} 
+  className="nav-connect"
+>
+  <button className="nav-connect">
+    <FaAddressBook className='contact-icon' />
+    Me contacter
+  </button>
+</Link>
     </div>
   );
 }

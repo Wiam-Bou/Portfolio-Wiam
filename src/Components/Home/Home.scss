@@ -43,7 +43,7 @@
 }
 
 .btn-contact {
-    background: linear-gradient(267deg, #f58e8e 0.36%, #c168e1);
+    background: linear-gradient(267deg, #da7c25 0.36%, #B923e1);
     margin: 1rem 0;
     padding: 0.75rem 1.5rem;
     border-radius: 50px;
@@ -80,4 +80,35 @@
         flex-direction: column; /* Empiler les éléments sur petits écrans */
         align-items: center; /* Centrer tout le contenu */
     }
+}
+
+@media only screen and (max-width: 375px) and (max-height: 667px) {
+    .profile_pic {
+      width: 17vh; /* La largeur sera de 17% de la hauteur de la fenêtre */
+      height: 17vh; /* La hauteur sera de 17% de la hauteur de la fenêtre */
+    }
+  }
+
+.btn-cv {
+    background: linear-gradient(267deg, #da7c25 0.36%, #B923e1);
+    margin: 1rem 0;
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border: none;
+    color: white;  // Texte blanc
+    text-decoration: none;  // Supprime la décoration de lien
+    font-size: medium;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: #c168e1;
+    }
+}
+
+.cv-icon {
+    margin-right: 0.5rem;  // Espacement entre l'icône et le texte
+    font-size: 1.5rem;
 }
