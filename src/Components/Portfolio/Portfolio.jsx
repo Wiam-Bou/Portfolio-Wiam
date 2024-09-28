@@ -10,7 +10,7 @@ const projects = [
     description: "Création de la page d'accueil d'une agence de voyage en utilisant HTML et CSS, avec intégration d'une interface responsive à partir de maquettes Figma. Ce projet m'a permis de développer des compétences en design responsive, en veillant à ce que le site soit parfaitement adapté aux appareils mobiles, tablettes et desktops.",
     image: '/Booki.jpg',
     codeLink: 'https://github.com/Wiam-Bou/BOOKI.git',
-    websiteLink: 'https://github.com/Wiam-Bou/BOOKI.git',
+    websiteLink: 'https://bookiproject.vercel.app/',
   },
   {
     title: 'Sophie Bluel',
@@ -33,14 +33,14 @@ const projects = [
     description: "Développement du front-end d'une application en utilisant React et React Router pour une expérience utilisateur fluide et réactive. J'ai travaillé sur la présentation des données avec des composants React, configuré la navigation entre les pages, et utilisé des données simulées à partir d'un fichier JSON. Le projet a été configuré avec vite, et Node.js a été utilisé pour exécuter du code JavaScript en dehors du navigateur",
     image: '/Kasa.png',
     codeLink: 'https://github.com/Wiam-Bou/Kasa-Project.git',
-    websiteLink: 'https://https://github.com/Wiam-Bou/Kasa-Project.git.com'
+    
   },
   {
     title: 'Mon vieux grimoire',
     description: "Développement du back-end d'un site de notation de livres en utilisant Express et MongoDB. J'ai implémenté des opérations CRUD pour la gestion des livres et des notations, intégré un système d'authentification sécurisé, et géré le téléchargement et l'optimisation des images. Le projet suit une architecture MVC et applique les bonnes pratiques du Green Code pour minimiser l'empreinte écologique.",
     image: '/grimoire.jpg',
     codeLink: 'https://github.com/Wiam-Bou/P6-vieuxGrimoire.git',
-    websiteLink: 'https://github.com/Wiam-Bou/P6-vieuxGrimoire.git'
+
   },
   
 ];

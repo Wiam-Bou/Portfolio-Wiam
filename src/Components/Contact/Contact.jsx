@@ -1,63 +1,43 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
+import emailjs from '@emailjs/browser';
 import './Contact.scss';
 
 function Contact() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    subject: '',
-    message: ''
-  });
+  const form = useRef();
+  const [result, setResult] = useState("");
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
-
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    try {
-      const response = await fetch('http://localhost:5000/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
+    setResult("Envoi en cours....");
 
-      const result = await response.json();
-      if (result.success) {
-        alert('Votre message a été envoyé avec succès!');
-        setFormData({
-          name: '',
-          email: '',
-          phone: '',
-          subject: '',
-          message: ''
-        });
-      } else {
-        alert('Une erreur est survenue. Veuillez réessayer.');
-      }
-    } catch (error) {
-      console.error('Erreur lors de l\'envoi du message:', error);
-      alert('Une erreur est survenue. Veuillez réessayer.');
-    }
+    emailjs
+      .sendForm('service_picahvg', 'template_z0e57xk', form.current, {
+        publicKey: 'xDTu0jneuqn2bGav5',
+      })
+      .then(
+        () => {
+          setResult("Formulaire soumis avec succès!");
+          // Réinitialiser le formulaire après l'envoi réussi
+          form.current.reset();
+        },
+        (error) => {
+          console.log('Échec de l\'envoi', error.text);
+          setResult("Une erreur est survenue. Veuillez réessayer.");
+        },
+      );
   };
 
   return (
     <section className='contactPage'>
       <div className="contact">
         <h2>Contactez-moi</h2>
-        <form onSubmit={handleSubmit} className="contact-form">
+        <form ref={form} onSubmit={handleSubmit} className="contact-form">
           <div className="form-group">
             <label htmlFor="name">Nom <span className="required">*</span></label>
             <input
               type="text"
               id="name"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
+              name="user_name" // Nom utilisé par Email.js
               required
             />
           </div>
@@ -66,9 +46,7 @@ function Contact() {
             <input
               type="email"
               id="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
+              name="user_email" // Nom utilisé par Email.js
               required
             />
           </div>
@@ -77,9 +55,7 @@ function Contact() {
             <input
               type="tel"
               id="phone"
-              name="phone"
-              value={formData.phone}
-              onChange={handleChange}
+              name="user_phone" // Nom utilisé par Email.js, si besoin
             />
           </div>
           <div className="form-group">
@@ -87,24 +63,21 @@ function Contact() {
             <input
               type="text"
               id="subject"
-              name="subject"
-              value={formData.subject}
-              onChange={handleChange}
+              name="subject" // Nom utilisé par Email.js
             />
           </div>
           <div className="form-group">
             <label htmlFor="message">Message <span className="required">*</span></label>
             <textarea
               id="message"
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
+              name="message" // Nom utilisé par Email.js
               rows="5"
               required
             ></textarea>
           </div>
           <button type="submit" className="submit-btn">Envoyer</button>
         </form>
+        <span>{result}</span> {/* Afficher le résultat ici */}
       </div>
     </section>
   );

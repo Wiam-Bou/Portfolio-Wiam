@@ -35,14 +35,6 @@ function Navbar() {
         Compétences
       </Link>
       <Link
-        to="about" 
-        smooth={true} 
-        duration={500} 
-        className='nav-menu'
-      >
-        A propos
-      </Link>
-      <Link
         to="portfolio"  
         smooth={true} 
         duration={500} 
